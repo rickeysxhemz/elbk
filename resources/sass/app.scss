@@ -1,0 +1,122 @@
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
+:root {
+    --color-primary: #d69d92;
+    --color-primary-dark: rgb(209, 133, 118);
+    --color-primary-light: rgba(214, 157, 146, 0.5);
+
+    font-size: 24px;
+}
+
+
+/* =============================
+ * Components
+ * ============================= */
+header {
+    @apply py-3 px-4 mb-6;
+
+    #logo {
+        @apply mx-auto mt-6;
+        max-width: 360px;
+    }
+}
+main {
+    @apply py-4 px-8 w-10/12 mx-auto;
+}
+h1 {
+    @apply text-2xl uppercase font-bold mb-5 text-center;
+}
+.hidden {
+    display: none;
+}
+
+
+/* =============================
+ * Forms
+ * ============================= */
+form {
+    @apply mx-auto;
+    max-width: 360px;
+
+    input[type=text],
+    input[type=number],
+    input[type=password],
+    select {
+        @apply py-2 px-3 w-full mb-3 border-2 border-gray-100;
+        &:focus {
+            @apply outline-none;
+            border-color: var(--color-primary);
+        }
+    }
+    button {
+        @apply py-2 px-4 w-full mb-3 text-white uppercase font-bold tracking-wide duration-500;
+        background: var(--color-primary);
+        font-style: 'Montserrat', sans-serif;
+        &:hover {
+            @apply bg-black;
+        }
+    }
+}
+
+
+/* =============================
+ * Check-In Table
+ * ============================= */
+#check-ins {
+    @apply mx-auto;
+    max-width: 360px;
+
+    ul {
+        li {
+            @apply w-full bg-purple-50 py-2 px-3;
+        }
+    }
+}
+
+
+/* =============================
+ * Banner
+ * ============================= */
+#banner {
+    @apply absolute h-12 py-3 px-4 mx-auto left-0 top-0 text-center text-white;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    background: var(--color-primary);
+    /* @apply w-full h-full; */
+}
+
+
+/* =============================
+ * Flashing Button
+ * ============================= */
+#flashing {
+    @apply py-2 px-4 absolute uppercase font-bold text-white bottom-0 right-0;
+    animation: glowing2 1360ms 1000ms infinite;
+}
+@keyframes glowing {
+    0% {
+        background-color: #FF3381;
+    }
+    50% {
+        background-color: #FF73A9;
+    }
+    100% {
+        background-color: #FF3381;
+    }
+}
+@keyframes glowing2 {
+    0% {
+        background-color: var(--color-primary-dark);
+        box-shadow: 0 0 5px var(--color-primary-dark);
+    }
+    50% {
+        background-color: var(--color-primary);
+        box-shadow: 0 0 20px var(--color-primary);
+    }
+    100% {
+        background-color: var(--color-primary-dark);
+        box-shadow: 0 0 5px var(--color-primary-dark);
+    }
+}
